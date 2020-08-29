@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<keyboard version="1">
+    <commands>
+        <key command="ExportSpriteSheet" shortcut="Ctrl+E" removed="true" />
+        <key command="Undo" shortcut="Ctrl+Z" removed="true" />
+        <key command="Undo" shortcut="D" />
+        <key command="Redo" shortcut="Ctrl+R" removed="true" />
+        <key command="Redo" shortcut="Ctrl+Y" />
+        <key command="Redo" shortcut="Ctrl+Shift+Z" />
+        <key command="Clear" shortcut="Del" />
+        <key command="Clear" shortcut="Backspace" />
+        <key command="Clear" shortcut="X" />
+        <key command="Fill" shortcut="F" removed="true" />
+        <key command="Fill" shortcut="M" />
+        <key command="Stroke" shortcut="S" removed="true" />
+        <key command="Flip" shortcut="Shift+H" removed="true">
+            <param name="orientation" value="horizontal" />
+            <param name="target" value="mask" />
+        </key>
+        <key command="PasteText" shortcut="T" removed="true" />
+        <key command="CanvasSize" shortcut="C" removed="true" />
+        <key command="CanvasSize" shortcut="Ctrl+Alt+R" />
+        <key command="LayerProperties" shortcut="Shift+P" removed="true" />
+        <key command="LayerProperties" shortcut="Ctrl+Shift+Space" />
+        <key command="DeselectMask" shortcut="Ctrl+D" removed="true" />
+        <key command="DeselectMask" shortcut="Shift+G" />
+        <key command="PaletteEditor" shortcut="A" removed="true" />
+        <key command="SwitchColors" shortcut="X" removed="true" />
+        <key command="ChangePixelFormat" shortcut="Ctrl+R">
+            <param name="format" value="rgb" />
+        </key>
+        <key command="CropSprite" shortcut="Ctrl+Alt+C" />
+        <key command="SpriteSize" shortcut="Ctrl+Shift+R" />
+        <key command="ChangePixelFormat" shortcut="Ctrl+E">
+            <param name="format" value="indexed" />
+        </key>
+        <key command="Flip" shortcut="H" />
+    </commands>
+    <tools>
+        <key tool="rectangular_marquee" shortcut="M" removed="true" />
+        <key tool="rectangular_marquee" shortcut="T" />
+        <key tool="elliptical_marquee" shortcut="Shift+M" removed="true" />
+        <key tool="lasso" shortcut="Q" removed="true" />
+        <key tool="lasso" shortcut="R" />
+        <key tool="polygonal_lasso" shortcut="Shift+Q" removed="true" />
+        <key tool="pencil" shortcut="B" removed="true" />
+        <key tool="pencil" shortcut="F" />
+        <key tool="spray" shortcut="Shift+B" removed="true" />
+        <key tool="eyedropper" shortcut="I" removed="true" />
+        <key tool="eyedropper" shortcut="S" />
+        <key tool="hand" shortcut="H" removed="true" />
+        <key tool="move" shortcut="V" removed="true" />
+        <key tool="slice" shortcut="Shift+C" removed="true" />
+        <key tool="paint_bucket" shortcut="G" removed="true" />
+        <key tool="gradient" shortcut="Shift+G" removed="true" />
+        <key tool="line" shortcut="L" removed="true" />
+        <key tool="line" shortcut="A" />
+        <key tool="curve" shortcut="Shift+L" removed="true" />
+        <key tool="rectangle" shortcut="U" removed="true" />
+        <key tool="filled_rectangle" shortcut="U" removed="true" />
+        <key tool="ellipse" shortcut="Shift+U" removed="true" />
+        <key tool="filled_ellipse" shortcut="Shift+U" removed="true" />
+        <key tool="contour" shortcut="D" removed="true" />
+        <key tool="polygon" shortcut="Shift+D" removed="true" />
+        <key tool="blur" shortcut="R" removed="true" />
+        <key tool="blur" shortcut="J" />
+        <key tool="jumble" shortcut="R" removed="true" />
+    </tools>
+    <quicktools>
+        <key tool="eyedropper" shortcut="Alt" removed="true" />
+        <key tool="move" shortcut="Ctrl" removed="true" />
+        <key tool="move" shortcut="V" />
+        <key tool="hand" shortcut="Space" />
+        <key tool="slice" shortcut="C" />
+        <key tool="paint_bucket" shortcut="G" />
+        <key tool="filled_rectangle" shortcut="Y" />
+    </quicktools>
+    <actions />
+    <wheel />
+</keyboard>
