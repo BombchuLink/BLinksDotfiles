@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while [ $time > 0 ]
+do
+	#check for discord
+	sleep 1
+done

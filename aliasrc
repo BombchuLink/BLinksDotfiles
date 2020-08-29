@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	bat="cat /sys/class/power_supply/BAT?/capacity" \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -v" \
+	mkd="mkdir -pv" \
+	yt="youtube-dl --add-metadata -i" \
+	yta="yt -x -f bestaudio/best" \
+	ffmpeg="ffmpeg -hide_banner" \
+	xdelta="xdelta3"
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	ka="killall" \
+	g="git" \
+	c="clear" \
+	sh="~/.config/scripts/ScriptHelp" \
+	trem="transmission-remote" \
+	YT="youtube-viewer" \
+	sdn="sudo shutdown -h now" \
+	f="$FILE" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	p="sudo pacman" \
+	xi="sudo xbps-install" \
+	xr="sudo xbps-remove -R" \
+	xq="xbps-query" \
+	ls='ls --color=auto' \
+	PS1='[\u@\h \W]\$ ' \
+	ranger='ranger --choosedir=$HOME/.cache/rangerdir; LASTDIR=`cat $HOME/.cache/rangerdir`; cd "$LASTDIR"' \
+	r='ranger' \
+	g='git' \
+	v='nvim' \
+	..='cd ..' \
+	la='ls -A' \
+	~='cd ~' \
+	ytd='youtube-dl' \
+	ytm='cd /home/blink/drives/media/Music/2_Downloaded\ Singles' \
+	tlm='/opt/bin/LeftMonitorTablet' \
+	trm='/opt/bin/RightMonitorTablet' \
+	ce='cd ~/drives/tco/Games/MAIN' \
+	mr='cd ~/repos/Magika-N' \
+	todo='v ~/drives/tco/Docs/todo.txt' \
+	lore='cd ~/drives/tco/Lore' \
+	cfv='v ~/.config/nvim/init.vim' \
+	cfx='v ~/.config/Xresources' \
+	cfa='v ~/.config/aliasrc' \
+	cmb='cmake --build build' \
+	ma='build/Magika-N' \
+	m='make && ./tw' \
+	rss='v ~/.config/newsboat/urls' \
+	please='sudo' \
+	vid='cd /home/blink/drives/media/Videos/Youtube\ videos' \
+	pvid='cd /home/blink/drives/media/Old\ Windows\ Builds/.Win10\ App/1_videos' \
+	pia='/home/blink/.local/share/privateinternetaccess/pia-linux-2.2.2-05198.run' \
+	tablet=' xsetwacom -v set "Wacom One by Wacom S Pen stylus" 'MapToOutput' 1920X1080+0+0 & xsetwacom set "Wacom One by Wacom S Pen stylus" Button 2 "key +super +ctrl z -super -ctrl" & xsetwacom set "Wacom One by Wacom S Pen stylus" Button 3 "key +super +shift z -super -shift" &'
+
+
+# This alias is important. It enables the `pauseallmpv` command.
+alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"
+
+# Some other stuff
+alias \
+	magit="nvim -c MagitOnly" \
+	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
+	weath="less -S ~/.local/share/weatherreport" \

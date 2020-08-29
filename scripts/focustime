@@ -1,0 +1,22 @@
+#!/bin/bash
+time=$(echo -e "How many minutes do you want to focus for?" | dmenu -i)
+resource=$(echo -e "Blaze\nCosmo\nCelestia\nChurch\nMario\nPooh\nShip\nStella" | dmenu -i)
+echo -e "time set for $time minutes!"
+let time=time\*60
+if [ $time -gt 0 ]
+then
+	mv -f /home/blink/.config/wall.png /home/blink/.config/wallpaper/wall_Shallow.png
+	cp -f /home/blink/.config/wallpaper/wall_$resource.png /home/blink/.config/wall.png
+	setbg &
+	xrdb /home/blink/.config/Xassets/X$resource ;
+	i3-msg restart &
+	sleep $time
+	mv -f /home/blink/.config/wall.png /home/blink/.config/wallpaper/wall_Deep.png
+	cp -f /home/blink/.config/wallpaper/wall_Shallow.png /home/blink/.config/wall.png
+	rm -f /home/blink/.config/wall_Deep.png
+	xrdb /home/blink/.config/Xresources ;
+	i3-msg restart &
+	setbg
+fi
+echo -e "Thank you for focusing on your work!"
+notify-send "Thank you for focusing on your work!"

@@ -1,0 +1,2 @@
+#!/bin/bash
+ls /home/blink/drives/media/Games/Emulation/Genesis | dmenu -i -l 30 | xargs -I {} gens /home/blink/drives/media/Games/Emulation/Genesis/"{}"

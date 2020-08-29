@@ -1,0 +1,2 @@
+#!/bin/bash
+ls /home/blink/drives/media/Games/Emulation/Gameboy | dmenu -i -l 30 | xargs -I {} mednafen /home/blink/drives/media/Games/Emulation/Gameboy/"{}"

@@ -1,0 +1,36 @@
+!! Transparency (0-1):
+st.alpha: 0.80
+st.font:DroidSansMono Nerd Font-14
+st.termname: st-256color
+st.borderpx: 8
+
+!! Hollow:
+*.color0:	#1d2021
+*.color1:	#E0D070
+*.color2:	#4090B0
+*.color3:	#FFD8C0
+*.color4:	#60D0A0
+*.color5:	#B080D0
+*.color6:	#FFC0B0
+*.color7:	#a89984
+!! ===bottom row===
+*.color8:	#D0D0D0
+*.color9:	#D0C060
+*.color10:	#3080A0
+*.color11:	#F0C8B0
+*.color12:	#50C090
+*.color13:	#A070C0
+*.color14:	#F0B0A0
+*.color15:	#ebdbb2
+*.background:  #040208
+
+*.borderwin:			#484068
+*.borderfocuswin:		#686088
+*.wkspfocusborder:		#602070
+*.wkspfocuscolour:		#602070
+*.wkspactiveborder:		#504060
+*.wkspactivecolour:		#504060
+*.wkspinactiveborder:	#000000
+*.wkspinactivecolour:	#776688
+*.wksptext:				#FFFFFF
+*.barbk:				#040804

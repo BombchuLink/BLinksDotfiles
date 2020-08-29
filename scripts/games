@@ -1,0 +1,3 @@
+#!/bin/bash
+choice=$(echo -e "Gameboy\nGameboyAdvance\nGenesis\nNES\nSNES" | dmenu -i -p "Choose System")
+/home/blink/.config/scripts/Gamesys/$choice

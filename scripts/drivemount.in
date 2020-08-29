@@ -1,0 +1,13 @@
+#!/bin/bash
+choice=$(echo -e "media\ndata" | dmenu -i -p "choose drive plz")
+echo "drive $choice picked!"
+subdrive="$(lsblk | grep $choice | cut -d ' ' -f 1 | tr -d └─)"
+drive="$(lsblk | grep $choice | cut -d ' ' -f 1 | tr -d └─ | cut -c 1-3)"
+echo "now unmounting $subdrive"
+pkill mpd
+sudo umount /dev/$subdrive
+sudo ntfsfix /dev/$subdrive
+echo "re-mounting $subdrive"
+sudo mount /dev/$subdrive ~/drives/$choice
+echo "drive successfully mounted!"
+mpd

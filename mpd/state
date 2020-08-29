@@ -1,0 +1,19 @@
+sw_volume: 74
+audio_device_state:1:PULSE
+audio_device_state:1:toggle_visualizer
+state: stop
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Red/End of Silence/04 - Already Over.mp3
+1:Reol/Albums/[2015.07.29] - Gokusaishiki/16 - Some.flac
+2:Aya Hiroshige/Aya Hiroshige - Hikaru Michi/廣重綾 - 光る道 - 01 - 光る道.mp3
+3:Compilations/Skullgirls (Original Soundtrack)/23 Daybreak.m4a
+4:PrinceWhateverer/PrinceWhateverer - Old Phantoms.zip/PrinceWhateverer - Old Phantoms - 01 Old Phantoms.mp3
+5:Gravity Wall _ Sh0ut - SawanoHiroyuki[nZk].zip/SawanoHiroyuki[nZk]/Gravity Wall _ Sh0ut/01 - Gravity Wall.mp3
+playlist_end
