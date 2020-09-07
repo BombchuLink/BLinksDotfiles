@@ -1,0 +1,5 @@
+#!/bin/bash
+choice=$( echo -e "choose a number" | dmenu -i -p "Workspace to move container to?" )
+i3-msg move container to workspace $choice
+i3-msg workspace $choice
+

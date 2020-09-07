@@ -1,0 +1,3 @@
+#!/bin/bash
+choice=$( echo -e "choose a number" | dmenu -i -p "Jump to Which workspace?" )
+i3-msg workspace $choice

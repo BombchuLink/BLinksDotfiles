@@ -1,7 +1,22 @@
 #!/bin/bash
+Program=0;
+find ~/.config/scripts/allowlist -name "*" -exec echo > $Program; notify-send "Program is $Program"
 
-while [ $time > 0 ]
-do
-	#check for discord
-	sleep 1
-done
+if [[ "${Program: -1}" -eq "/" ]]
+then
+	echo "is root dir"
+else
+	if [[ -f $Program ]]
+	then
+		num=$(awk '{print($1-1)}' $Program)
+		if [[ $num -eq 0 ]]
+		then
+			rm -f $Program
+		else
+			#notify-send "$Program time is $num"
+			echo "$num" > $Program
+		fi
+	else
+		pgrep -cx $Program && pkill $Program
+	fi
+fi

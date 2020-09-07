@@ -1,0 +1,18 @@
+#!/bin/bash
+day=$(date | awk '{print$1$2$3"-"$7}')
+if [[ -f ~/.config/scripts/Daily/$day.day ]]
+then
+	echo "Work Time!"
+else
+	#thing has not been done today
+	#delete all old .day files
+	rm -f ~/.config/scripts/Daily/*.day
+	#make day file for today
+	echo "1" > ~/.config/scripts/Daily/$day.day
+	#once-a-day payload
+	i3-msg workspace 99
+	$TERMINAL -e nvim ~/drives/tco/Docs/agenda.txt & disown
+	$TERMINAL -e nvim ~/drives/tco/Docs/todo.txt & disown
+	#terminals look wack so re-render
+	i3-msg restart
+fi

@@ -1,0 +1,15 @@
+#!/bin/bash
+if [[ -f ~/.config/scripts/nomouse ]]
+then
+	disable=$(xinput list | grep MOUSE | grep pointer | grep -v Control | awk '{print $6}' | tr -d id=)
+	xinput --enable $disable
+	notify-send "Mouse Enabled"
+	$mouseenabled = true
+	rm -f ~/.config/scripts/nomouse
+else
+	disable=$(xinput list | grep MOUSE | grep pointer | grep -v Control | awk '{print $6}' | tr -d id=)
+	xinput --disable $disable
+	notify-send "Mouse Disabled"
+	$mouseenabled = false
+	touch ~/.config/scripts/nomouse
+fi

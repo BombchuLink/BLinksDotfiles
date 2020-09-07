@@ -1,0 +1,4 @@
+#!/bin/bash
+xsetwacom -v set "Wacom One by Wacom S Pen stylus" 'MapToOutput' 1920X1080+0+0
+i3-msg workspace 4
+pgrep -cx krita || krita

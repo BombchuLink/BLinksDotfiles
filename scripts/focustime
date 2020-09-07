@@ -1,22 +1,36 @@
 #!/bin/bash
 time=$(echo -e "How many minutes do you want to focus for?" | dmenu -i)
-resource=$(echo -e "Blaze\nCosmo\nCelestia\nChurch\nMario\nPooh\nShip\nStella" | dmenu -i)
-echo -e "time set for $time minutes!"
-let time=time\*60
-if [ $time -gt 0 ]
+if [[ $time -eq	allow ]]
 then
-	mv -f /home/blink/.config/wall.png /home/blink/.config/wallpaper/wall_Shallow.png
-	cp -f /home/blink/.config/wallpaper/wall_$resource.png /home/blink/.config/wall.png
-	setbg &
-	xrdb /home/blink/.config/Xassets/X$resource ;
-	i3-msg restart &
-	sleep $time
-	mv -f /home/blink/.config/wall.png /home/blink/.config/wallpaper/wall_Deep.png
-	cp -f /home/blink/.config/wallpaper/wall_Shallow.png /home/blink/.config/wall.png
-	rm -f /home/blink/.config/wall_Deep.png
-	xrdb /home/blink/.config/Xresources ;
-	i3-msg restart &
-	setbg
+	allowedprogram=$(echo -e "choose program to allow" | dmenu -i)
+	allowedtime=$(echo -e "how many minutes?" | dmenu -i)
+	let allowedtime=allowedtime\*60
+	echo "$allowedtime" > ~/.config/scripts/allowlist/$allowedprogram
+else
+	resource=$(echo -e "Blaze\nCosmo\nCelestia\nChurch\nMario\nPooh\nShip\nStella" | dmenu -i)
+	echo -e "time set for $time minutes!"
+	#let time=time\*60
+	if [ $time -gt 0 ]
+	then
+		mv -f /home/blink/.config/wall.png /home/blink/.config/wallpaper/wall_Shallow.png
+		cp -f /home/blink/.config/wallpaper/wall_$resource.png /home/blink/.config/wall.png
+		setbg &&
+		xrdb /home/blink/.config/Xassets/X$resource &&
+		i3-msg restart &
+		while [[ $time -gt 0 ]]
+		do
+			~/.config/scripts/norun &
+			time=$((time-1))
+			sleep 1
+		done
+		mv -f /home/blink/.config/wall.png /home/blink/.config/wallpaper/wall_Deep.png
+		cp -f /home/blink/.config/wallpaper/wall_Shallow.png /home/blink/.config/wall.png
+		rm -f /home/blink/.config/wall_Deep.png
+		rm -f /home/blink/.config/scripts/allowlist/*
+		xrdb /home/blink/.config/Xresources ;
+		i3-msg restart &
+		setbg
+	fi
+	notify-send "Thank you for focusing on your work!"
+
 fi
-echo -e "Thank you for focusing on your work!"
-notify-send "Thank you for focusing on your work!"

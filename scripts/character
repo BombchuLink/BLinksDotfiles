@@ -1,0 +1,10 @@
+#!/bin/bash
+charactermax=$(wc -l ~/.config/scripts/char/adj)
+chartypemax=$(wc -l ~/.config/scripts/char/adv)
+charmax=$(wc -l ~/.config/scripts/char/char)
+character=$(echo $((1+RANDOM % 10)))
+chartype=$(echo $((1+RANDOM % 10)))
+char=$(echo $((1+RANDOM % 10)))
+sed "${character}q;d" ~/.config/scripts/char/adj
+sed "${chartype}q;d" ~/.config/scripts/char/adv
+sed "${char}q;d" ~/.config/scripts/char/char
