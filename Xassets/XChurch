@@ -3,6 +3,8 @@ st.opacity: 0.86
 st.font:DroidSansMono Nerd Font-14
 st.termname: st-256color
 st.borderpx: 8
+st.cursorshape: 6
+st.blinktimeout: 0
 
 !! Church:
 *.color0:	#1d2021
