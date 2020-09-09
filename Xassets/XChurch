@@ -1,5 +1,5 @@
 !! Transparency (0-1):
-st.alpha: 0.86
+st.opacity: 0.86
 st.font:DroidSansMono Nerd Font-14
 st.termname: st-256color
 st.borderpx: 8
