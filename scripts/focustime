@@ -27,9 +27,9 @@ elif [ $time = nuke ]; then
 	done
 
 else
-	resource=$(echo -e "Blaze\nCosmo\nCelestia\nChurch\nMario\nPooh\nShip\nStella" | dmenu -i)
+	resource=$(echo -e "Blaze\nCreamia\nCosmo\nCelestia\nChurch\nLadyNimu\nMario\nMarisa\nPooh\nShip\nSnow\nStella" | dmenu -i)
 	#echo -e "time set for $time minutes!"
-	#let time=time\*60
+	let time=time\*60
 	#echo out to file
 	echo "$time" > ~/.config/scripts/allowlist/totaltime
 	if [ $time -gt 0 ]

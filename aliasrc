@@ -28,6 +28,7 @@ alias \
 	g="git" \
 	c="clear" \
 	sh="~/.config/scripts/ScriptHelp" \
+	tor="cd ~/drives/media/Torrents" \
 	trem="transmission-remote" \
 	YT="youtube-viewer" \
 	sdn="sudo shutdown -h now" \
@@ -51,21 +52,30 @@ alias \
 	ytm='cd /home/blink/drives/media/Music/2_Downloaded\ Singles' \
 	tlm='/opt/bin/LeftMonitorTablet' \
 	trm='/opt/bin/RightMonitorTablet' \
-	ce='cd ~/drives/tco/Games/MAIN' \
+	ce='cd ~/drives/tco/Games/MAIN; ~/.config/scripts/checkday' \
 	mr='cd ~/repos/Magika-N' \
 	todo='v ~/drives/tco/Docs/todo.txt' \
+	agenda='v ~/drives/tco/Docs/agenda.txt' \
 	lore='cd ~/drives/tco/Lore' \
 	cfv='v ~/.config/nvim/init.vim' \
 	cfx='v ~/.config/Xresources' \
 	cfa='v ~/.config/aliasrc' \
+	cfsx='v ~/.config/sxhkd/sxhkdrc' \
+	cfi3='v ~/.config/i3/config' \
 	cmb='cmake --build build' \
 	ma='build/Magika-N' \
 	m='make && ./tw' \
 	rss='v ~/.config/newsboat/urls' \
 	please='sudo' \
+	wk='i3-msg workspace' \
+	wkm='i3-msg move container to workspace' \
 	vid='cd /home/blink/drives/media/Videos/Youtube\ videos' \
 	pvid='cd /home/blink/drives/media/Old\ Windows\ Builds/.Win10\ App/1_videos' \
-	pia='/home/blink/.local/share/privateinternetaccess/pia-linux-2.2.2-05198.run' \
+	pia='~/.config/pia-linux-2.3.1-05354.run' \
+	scripts='cd ~/.config/scripts' \
+	MonTabL='~/.config/scripts/LeftMonitorTablet' \
+	MonTabR='~/.config/scripts/RightMonitorTablet' \
+	charget='~/.config/scripts/character' \
 	tablet=' xsetwacom -v set "Wacom One by Wacom S Pen stylus" 'MapToOutput' 1920X1080+0+0 & xsetwacom set "Wacom One by Wacom S Pen stylus" Button 2 "key +super +ctrl z -super -ctrl" & xsetwacom set "Wacom One by Wacom S Pen stylus" Button 3 "key +super +shift z -super -shift" &'
 
 

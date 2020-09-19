@@ -1,0 +1,38 @@
+!! Transparency (0-1):
+st.opacity: 0.86
+st.font:DroidSansMono Nerd Font-14
+st.termname: st-256color
+st.borderpx: 8
+st.cursorshape: 6
+st.blinktimeout: 0
+
+!! Marisa:
+*.color0:	#201830
+*.color1:	#8f4e9a
+*.color2:	#cd7d5a
+*.color3:	#eed3a3
+*.color4:	#eda673
+*.color5:	#b16286
+*.color6:	#eda673
+*.color7:	#a89984
+
+*.color8:	#928374
+*.color9:	#9f5eAa
+*.color10:	#ad5d3a
+*.color11:	#fee4b3
+*.color12:	#fdb683
+*.color13:	#d3869b
+*.color14:	#fdb683
+*.color15:	#ebdbb2
+*.background:  #211926
+
+*.borderwin:			#504050
+*.borderfocuswin:		#706C90
+*.wkspfocusborder:		#0055BB
+*.wkspfocuscolour:		#404090
+*.wkspactiveborder:		#403070
+*.wkspactivecolour:		#403070
+*.wkspinactiveborder:	#000000
+*.wkspinactivecolour:	#666666
+*.wksptext:				#FFFFFF
+*.barbk:				#080408
