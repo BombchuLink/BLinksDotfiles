@@ -1,0 +1,43 @@
+#!/bin/bash
+
+#check if in hotkey mode even
+
+while [ -f ~/.config/scripts/keyshot ]; do
+	title=$( xtitle | awk '{print $NF}')
+	newtitle=$title
+	while [ $title == $newtitle ]; do
+		#if re-entered normal mode, break out
+		if [ ! -f ~/.config/scripts/keyshot ] ; then
+			#notify-send "exting hotkey mode"
+			break
+		fi
+		newtitle=$( xtitle | awk '{print $NF}')
+		#echo "focused window is $newtitle previous was $title"
+		sleep 0.03;
+	done
+	#must break from both while loops
+	if [ ! -f ~/.config/scripts/keyshot ] ; then
+			break
+	fi
+	echo $newtitle > ~/.config/scripts/sxhkdhotkeys/wintitle
+	#update sxhkd to new window (if file exists)
+	if [ -f ~/.config/scripts/sxhkdhotkeys/$newtitle.sxhkd ]; then
+		pkill sxhkd ;
+		sxhkd ~/.config/scripts/sxhkdhotkeys/$newtitle.sxhkd &
+		#notify-send "Hotkeys updated for $newtitle"
+	else
+		#notify-send "no hotkeys found for $newtitle"
+		pkill sxhkd ;
+		sxhkd ~/.config/sxhkd/sxhkdrc &
+	fi
+	#update xmodmap as well
+	#if [ -f ~/.config/scripts/sxhkdhotkeys/$newtitle.xmodmap ]; then
+	#	xmodmap ~/.config/scripts/sxhkdhotkeys/$newtitle.xmodmap &
+	#fi
+done
+
+#revert sxhkd to default config
+pkill sxhkd
+sxhkd ~/.config/sxhkd/sxhkdrc &
+#revert xmodmap to default config
+xmodmap ~/.config/Xmodmap &

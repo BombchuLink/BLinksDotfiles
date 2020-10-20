@@ -1,0 +1,35 @@
+!! Transparency (0-1):
+st.alpha: 0.86
+st.font:DroidSansMono Nerd Font-14
+st.termname: st-256color
+st.borderpx: 8
+
+!! Mario:
+*.color0:	#1d2021
+*.color1:	#c55552
+*.color2:	#cd7d5a
+*.color3:	#d79921
+*.color4:	#458588
+*.color5:	#b16286
+*.color6:	#517172
+*.color7:	#a89984
+*.color8:	#928374
+*.color9:	#d66663
+*.color10:	#ad5d3a
+*.color11:	#fabd2f
+*.color12:	#70888A
+*.color13:	#d3869b
+*.color14:	#607A7B
+*.color15:	#ebdbb2
+*.background:  #211916
+
+*.borderwin:			#504840
+*.borderfocuswin:		#9A6C30
+*.wkspfocusborder:		#BB5500
+*.wkspfocuscolour:		#904441
+*.wkspactiveborder:		#703020
+*.wkspactivecolour:		#703020
+*.wkspinactiveborder:	#000000
+*.wkspinactivecolour:	#666666
+*.wksptext:				#FFFFFF
+*.barbk:				#080400

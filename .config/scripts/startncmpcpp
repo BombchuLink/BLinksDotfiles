@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+if [ "pgrep -c ncmpcpp" ]; then
+	$TERMINAL ncmpcpp & disown
+	sleep 0.3
+fi

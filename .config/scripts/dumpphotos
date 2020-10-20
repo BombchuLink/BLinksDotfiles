@@ -1,0 +1,10 @@
+#!/bin/bash
+notify-send "Mounting Nokia to dump photos"
+simple-mpfs --device 1 ~/android
+sleep 1
+if [[ ~/android/Internal shared storage ]]; then
+cp ~/android/Internal\ shared\ storage/DCIM/Camera/*.mp4 ~/.drives/media/Pictures/krita\ stuffs/References ; notify-send "Files Sucessfully sent!"
+
+else
+	notify-send "ERROR: Nokia Not mounted!"
+fi

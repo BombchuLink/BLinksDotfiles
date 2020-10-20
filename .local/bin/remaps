@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+# This script is called by i3 on startup to remap keys.
+# Increase key speed via a rate change
+xset r rate 300 50
+#kill all previous instances of xcape
+killall xcape 2>/dev/null
+# Map the caps lock key to super
+setxkbmap -option caps:super
+# But when it is pressed only once, treat it as escape.
+xcape -e 'Super_L=Escape'
+# Map the menu button to hyper left and scroll lock to hyper right
+xmodmap -e 'keycode 135 = Hyper_L'
+xmodmap -e 'keycode 78 = Hyper_R'
+#map Hyper_L and Hyper_R to tablet
+xsetwacom set "Wacom One by Wacom S Pen stylus" Button 2 "key +lhyper" ;
+xsetwacom set "Wacom One by Wacom S Pen stylus" Button 3 "key +rhyper"
+#map L and R hyper when pressed/released alone, to Super+CTRL+z and Super+SHIFT+z
+xcape -e 'Hyper_L=Super_L|Control_L|z;Hyper_R=Super_L|Shift_L|z'
+#and finally map hyper to mod3
+xmodmap -e 'remove mod4 = Hyper_L'
+xmodmap -e 'add mod3 = Hyper_L'
+#clear modifiers
+xmodmap -e 'remove mod5 = Mode_switch'
+xmodmap -e 'remove mod2 = Num_Lock'
+#remap space to Mode_Switch
+xmodmap -e 'keycode 65 = Mode_switch'
+xmodmap -e 'add mod2 = Mode_switch'
+#map space to different physical key
+xmodmap -e 'keycode 97 = space'
+#map space when pressed/released alone, to space
+xcape -e 'Mode_switch=space'

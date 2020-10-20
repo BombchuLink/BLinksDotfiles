@@ -1,0 +1,26 @@
+#!/bin/bash
+if [[ -f ~/.config/scripts/keyshot ]]
+then
+	#notify-send "Keyboard is Normal"
+	xmodmap ~/.config/Xmodmap
+	rm -f ~/.config/scripts/keysmirrored
+	rm -f ~/.config/scripts/keyshot
+else
+	#notify-send "Keyboard is HOT"
+	touch ~/.config/scripts/keyshot
+	rm -f ~/.config/scripts/keysmirrored
+	sleep 0.3
+	#load proper hotkeys for program
+	newtitle=$( xtitle | awk '{print $NF}')
+	if [ -f ~/.config/scripts/sxhkdhotkeys/$newtitle.sxhkd ]; then
+		pkill sxhkd ;
+		sxhkd ~/.config/scripts/sxhkdhotkeys/$newtitle.sxhkd &
+		#notify-send "inited on $newtitle"
+	#else
+		#notify-send "inited on unconfiged program"
+	fi
+	#start hotkey monitor
+	~/.config/scripts/managehotkeys &
+fi
+polybar-msg hook keymode 1
+

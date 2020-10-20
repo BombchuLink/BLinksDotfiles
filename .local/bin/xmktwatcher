@@ -1,0 +1,62 @@
+#!/bin/bash
+i=0
+while [ $i -eq 0 ]; do
+	MODS_HELD=""
+
+	#control
+	held=$(xmkt 0xFFE3)
+	if [ $held -eq 1 ]; then
+		MODS_HELD="${MODS_HELD} C"
+	else
+		MODS_HELD="${MODS_HELD} _"
+	fi
+	#alt
+	held=$(xmkt 0xFFE9)
+	if [ $held -eq 1 ]; then
+		MODS_HELD="${MODS_HELD} A"
+	else
+		MODS_HELD="${MODS_HELD} _"
+	fi
+	#shift
+	held=$(xmkt 0xFFE1)
+	if [ $held -eq 1 ]; then
+		MODS_HELD="${MODS_HELD} Sh"
+	else
+		MODS_HELD="${MODS_HELD} __"
+	fi
+	#super
+	held=$(xmkt 0xFFEB)
+	if [ $held -eq 1 ]; then
+		MODS_HELD="${MODS_HELD} Su"
+	else
+		MODS_HELD="${MODS_HELD} __"
+	fi
+	#Hyper
+	held=$(xmkt 0xFFED)
+	if [ $held -eq 1 ]; then
+		MODS_HELD="${MODS_HELD} H"
+	else
+		MODS_HELD="${MODS_HELD} _"
+	fi
+	#Mode_switch
+	held=$(xmkt 0xFF7E)
+	if [ $held -eq 1 ]; then
+		MODS_HELD="${MODS_HELD} M"
+	else
+		MODS_HELD="${MODS_HELD} _"
+	fi
+	#ISO_Level3_Shift
+	held=$(xmkt 0xFE03)
+	if [ $held -eq 1 ]; then
+		MODS_HELD="${MODS_HELD} I"
+	else
+		MODS_HELD="${MODS_HELD} _"
+	fi
+	echo $MODS_HELD > ~/.config/scripts/keys_held ; polybar-msg hook keys 1 ; sleep 0.05
+
+	#if [ $held -eq 1 ]; then
+	#	polybar-msg hook keys 2
+	#else
+	#	polybar-msg hook keys 1
+	#fi
+done

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+currentmode=$(<~/.local/bin/statusbar/mode_CURRENT)
+if [[ $currentmode -eq 0 ]]; then
+	rm -f ~/.local/bin/statusbar/mode
+	cp -f ~/.local/bin/statusbar/mode_HOTKEY ~/.local/bin/statusbar/mode
+	echo "1" > ~/.local/bin/statusbar/mode_CURRENT
+	#load new kotkeys based on window
+	pkill sxhkd
+	Program=$(<~/.local/bin/i3cmds/currentwindow)
+	sxhkd -c ~/.config/hotkeys/$Program.sxhkdrc
+else
+	rm -f ~/.local/bin/statusbar/mode
+	cp -f ~/.local/bin/statusbar/mode_NORMAL ~/.local/bin/statusbar/mode
+	echo "0" > ~/.local/bin/statusbar/mode_CURRENT
+	#reload default sxhkd
+	pkill sxhkd
+	sxhkd
+fi
+#update bar on mode
+pkill -SIGRTMIN+12 i3blocks

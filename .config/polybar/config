@@ -1,0 +1,169 @@
+
+[colors]
+black = #1A1D45
+bblack = #2c3073
+white = #D7B7BB
+red = #FF4EA5
+green = #7EB564
+gray = #7E7E7E
+yellow = #F5B569
+blue = #7A89EC
+magenta = #B66CDC
+cyan = #6CAC99
+
+
+[bar/main]
+monitor = "DVI-D-1"
+enable-ipc = true
+background = ${colors.black}
+foreground = ${colors.white}
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=8;3
+font-2 = Font Awesome 5 Brands:size=8;3
+font-3 = Sans:size=5;3
+font-4 = Source Han Sans JP Medium:size=8;3
+font-5 = JAPANESE_CANT_READ:size=8;3
+wm-restack = i3
+border-size = 5
+border-color = ${colors.black}
+height = 20
+modules-left = i3
+modules-right = music s network vpn s keymode s vol s date s time
+
+[bar/second]
+monitor = "HDMI-1"
+enable-ipc = true
+background = ${colors.black}
+foreground = ${colors.white}
+font-0 = JetBrains Mono:size=9;3
+font-1 = Font Awesome 5 Free Solid:size=8;3
+font-2 = Font Awesome 5 Brands:size=8;3
+font-3 = Sans:size=5;3
+font-4 = Source Han Sans JP Medium:size=8;3
+font-5 = JAPANESE_CANT_READ:size 8;3
+wm-restack = i3
+border-size = 5
+border-color = ${colors.black}
+height = 20
+modules-left = i3
+modules-right = music s network vpn s keymode s vol s date s time
+
+
+[module/s]
+type = custom/text
+content = "%{T4}  %{T-}"
+content-background = ${colors.black}
+
+[module/wtitle]
+type = internal/xwindow
+label = "%title% "
+label-empty = "Desktop "
+label-maxlen = 40
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+format = <label-state>
+label-occupied-foreground = ${colors.white}
+label-focused-foreground = ${colors.black}
+label-empty-foreground = ${colors.bblack}
+label-occupied-background = ${colors.bblack}
+label-focused-background = ${colors.white}
+label-focused = "%icon% %name%"
+label-occupied = "%icon% %name%"
+label-empty = "%icon% %name%"
+label-focused-padding = 1
+label-occupied-padding = 1
+label-empty-padding = 1
+label-separator = "%{T4}  %{T4}"
+ws-icon-0 = 0;
+ws-icon-1 = 1;
+ws-icon-2 = 2;
+ws-icon-3 = 3;
+ws-icon-4 = 4;
+ws-icon-5 = 5;
+ws-icon-6 = 6;
+ws-icon-7 = 7;
+ws-icon-8 = 8;
+ws-icon-9 = 9;
+ws-icon-10 = 10;
+ws-icon-default = 
+
+
+[module/music]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+format-online = <label-song>
+format-playing = ${self.format-online}
+format-paused = ${self.format-online}
+format-stopped = ${self.format-online}
+format-offline = ${self.label-offline}
+label-song = "  %artist% - %title% "
+label-offline = "  Offline "
+label-song-foreground = ${colors.black}
+label-song-background = ${colors.green}
+format-offline-foreground = ${colors.black}
+format-offline-background = ${colors.gray}
+
+[module/vol]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+format-volume = <label-volume>
+format-muted = <label-muted>
+label-muted = "  Muted "
+label-volume = "  %percentage%% "
+format-volume-background = ${colors.blue}
+format-volume-foreground = ${colors.black}
+format-muted-background = ${colors.blue}
+format-muted-foreground = ${colors.black}
+
+[module/network]
+type = internal/network
+interface = enp30s0
+label-disconnected = "  No wifi "
+label-connected = "  %local_ip% "
+label-connected-foreground = ${colors.black}
+label-connected-background = ${colors.red}
+label-disconnected-foreground = ${colors.black}
+label-disconnected-background = ${colors.red}
+
+[module/vpn]
+type = custom/script
+exec = echo "[VPN] "
+exec-if = test -f ~/.config/scripts/VPNON
+format-foreground = ${colors.black}
+format-background = ${colors.red}
+format-padding = 0
+interval = 5
+
+[module/keymode]
+type = custom/ipc
+lable-active = %token%
+lable-active-font = 4
+hook-0 = if test -f ~/.config/scripts/keysmirrored; then echo "%{T}MIRROR"; elif test -f ~/.config/scripts/keyshot; then echo "HOTKEY"; else echo "%{T}NORMAL"; fi
+format-background = ${colors.magenta}
+format-foreground = ${colors.black}
+format-padding = 1
+initial = 1
+
+[module/keys]
+type = custom/ipc
+# when sleep is fast, it can cause issues to where the text file is blank sometimes
+hook-0 = string=$(<~/.config/scripts/keys_held); if [ ${#string} -eq 15 ] ; then cat ~/.config/scripts/keys_held; else echo "_ _ __ __ _ _ _"; fi
+format-background = ${colors.magenta}
+format-foreground = ${colors.black}
+format-padding = 1
+initial = 1
+
+[module/date]
+type = internal/date
+format-foreground = ${colors.black}
+format-background = ${colors.cyan}
+date = "  %a, %b %d "
+
+[module/time]
+type = internal/date
+format-foreground = ${colors.black}
+format-background = ${colors.yellow}
+date = "  %H:%M "

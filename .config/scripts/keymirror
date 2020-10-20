@@ -1,0 +1,15 @@
+#!/bin/bash
+if [[ -f ~/.config/scripts/keysmirrored ]]
+then
+	#notify-send "Keyboard is Normal"
+	xmodmap ~/.config/Xmodmap
+	rm -f ~/.config/scripts/keysmirrored
+	rm -f ~/.config/scripts/keyshot
+else
+	#notify-send "Keyboard is Mirrored"
+	xmodmap ~/.config/Xmirrormap
+	touch ~/.config/scripts/keysmirrored
+	rm -f ~/.config/scripts/keyshot
+fi
+polybar-msg hook keymode 1
+

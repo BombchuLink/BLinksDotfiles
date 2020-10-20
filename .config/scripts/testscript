@@ -1,0 +1,8 @@
+#!/bin/bash
+string=$(<~/.config/scripts/keys_held)
+if [ ${#string} -eq 15 ] ; then
+	#cat ~/.config/scripts/keys_held;
+	echo ${#string}
+else
+	echo ${#string}
+fi

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+choice=$(echo -e "Speakers\nHeadphones" | dmenu -i)
+
+case "$choice" in
+	Speakers)
+		# Swap device that the EQ pipes to, to Speakers
+		#move FFT stream to speakers device
+		echo "Speaker set!"
+		pactl move-sink-input "$(pulsemixer --list-sinks | grep Equalized | cut -d ' ' -f 4 | tr -d , | sed 's/.*-//')" "$(pulsemixer --list-sinks | grep Family\ 17h| grep -v FFT | cut -d ' ' -f 3 | tr -d , | sed 's/.*-//')"
+		;;
+
+	Headphones)
+		# Swap device that the EQ pipes to, to Headphones
+		#move FFT stream to Headphones device
+		echo "Headphones set!"
+		pactl move-sink-input "$(pulsemixer --list-sinks | grep Equalized | cut -d ' ' -f 4 | tr -d , | sed 's/.*-//')" "$(pulsemixer --list-sinks | grep HyperX| grep -v FFT | cut -d ' ' -f 3 | tr -d , | sed 's/.*-//')"
+		;;
+	*)
+		echo "Invalid option selected"
+		;;
+esac

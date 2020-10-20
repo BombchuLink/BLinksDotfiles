@@ -1,0 +1,8 @@
+#!/bin/bash
+chartype=$(echo $((RANDOM % 522)))
+sed "${chartype}q;d" ~/.config/scripts/char/adv
+sleep 1
+chartype=$(echo $(RANDOM % 522))
+sed "${character}q;d" ~/.config/scripts/char/adv
+char=$(echo $((RANDOM % 46)))
+sed "${char}q;d" ~/.config/scripts/char/char

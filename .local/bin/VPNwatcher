@@ -1,0 +1,18 @@
+#!/bin/bash
+i=0
+while [ $i -eq 0 ]; do
+	state="$(piactl get connectionstate)"
+	echo $state
+	if [ $state == "Connected" ]; then
+		touch ~/.config/scripts/VPNON
+	else
+		rm -f ~/.config/scripts/VPNON
+	fi
+	sleep 5
+
+	#if [ $held -eq 1 ]; then
+	#	polybar-msg hook keys 2
+	#else
+	#	polybar-msg hook keys 1
+	#fi
+done
