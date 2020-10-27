@@ -13,15 +13,15 @@ cyan = #6CAC99
 
 
 [bar/main]
-monitor = "DVI-D-1"
+monitor = "DVI-D-0"
 enable-ipc = true
 background = ${colors.black}
 foreground = ${colors.white}
-font-0 = JetBrains Mono:size=9;3
+font-0 = JetBrains Mono Nerd Font:size=10;3
 font-1 = Font Awesome 5 Free Solid:size=8;3
 font-2 = Font Awesome 5 Brands:size=8;3
 font-3 = Sans:size=5;3
-font-4 = Source Han Sans JP Medium:size=8;3
+font-4 = Source Han Sans JP Medium:size=9;3
 font-5 = JAPANESE_CANT_READ:size=8;3
 wm-restack = i3
 border-size = 5
@@ -31,15 +31,15 @@ modules-left = i3
 modules-right = music s network vpn s keymode s vol s date s time
 
 [bar/second]
-monitor = "HDMI-1"
+monitor = "HDMI-0"
 enable-ipc = true
 background = ${colors.black}
 foreground = ${colors.white}
-font-0 = JetBrains Mono:size=9;3
-font-1 = Font Awesome 5 Free Solid:size=8;3
+font-0 = JetBrains Mono Nerd Font:size=10;3
+font-1 = Font Awesome 5 Free Solid:size=9;3
 font-2 = Font Awesome 5 Brands:size=8;3
 font-3 = Sans:size=5;3
-font-4 = Source Han Sans JP Medium:size=8;3
+font-4 = Source Han Sans JP Medium:size=9;3
 font-5 = JAPANESE_CANT_READ:size 8;3
 wm-restack = i3
 border-size = 5
@@ -84,7 +84,7 @@ ws-icon-4 = 4;
 ws-icon-5 = 5;
 ws-icon-6 = 6;
 ws-icon-7 = 7;
-ws-icon-8 = 8;
+ws-icon-8 = 8;
 ws-icon-9 = 9;
 ws-icon-10 = 10;
 ws-icon-default = 
